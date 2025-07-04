@@ -60,6 +60,11 @@ class WeatherData(BaseModel):
     wind_speed: float
     cloud_cover: float
 # 3.  Определение endpoint для прогнозирования:
+@app.get("/health")
+async def health_check():
+    logger.info("Health check requested")
+    return {"status": "OK"}
+
 @app.post("/predict")
 async def predict_precipitation(weather_data: WeatherData):
     """
@@ -72,7 +77,7 @@ async def predict_precipitation(weather_data: WeatherData):
     try:
         # Преобразование данных в DataFrame (требуется для sklearn)
         input_data = pd.DataFrame([weather_data.model_dump()])  # Важно: оборачиваем model_dump в список
-        logger.debug(f"Входные данные: {input_data}")  # Log DEBUG
+        logger.info(f"Входные данные: {input_data}")  # Log DEBUG
         # Прогнозирование с помощью загруженной модели
         prediction = model.predict(input_data)[0]
         logger.info(f"Предсказанное значение осадков: {prediction}")  # Log INFO
