@@ -86,3 +86,4 @@ async def predict_precipitation(weather_data: WeatherData):
     except Exception as e:
         logger.exception("Произошла ошибка при прогнозировании.")  # Log ERROR с трассировкой стека
         raise HTTPException(status_code=500, detail=str(e))  # Обработка ошибок
+
