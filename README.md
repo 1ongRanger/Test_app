@@ -8,6 +8,6 @@
 2. После создания образа выполните команду docker run -p 8000:8000 --name  precipitation-api precipitation-api для создания контейнера и запуска сервера
 3. Для работы с приложением перейдите по следующей ссылке http://127.0.0.1:8000/docs и можете начинать отправлять запросы
   ## Запуск из образа Docker
-1. Скачайте образ введя команду: docker pull akulovk/precipitation-api:1.0.0
-2. Запустите образ следующей командой в Docker: docker run -p -d 8000:8000  akulovk/precipitation-api:1.0.0
+1. Скачайте образ введя команду: docker pull akulovk/precipitation-api:1.2.0
+2. Запустите образ следующей командой в Docker: docker run -p -d 8000:8000  akulovk/precipitation-api:1.2.0
 3. Для работы с приложением перейдите по следующей ссылке http://127.0.0.1:8000/docs и можете начинать отправлять запросы
